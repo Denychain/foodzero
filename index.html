@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FoodZero — Головна</title>
+    <meta name="description" content="FoodZero — ресторан із фокусом на здорове харчування.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Замінити шрифти на ті, що в макеті, якщо відрізняються -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Rufina:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти до контенту</a>
+
+    <header class="site-header" id="top" role="banner">
+      <div class="container header__inner">
+        <a class="logo" href="/" aria-label="На головну">
+         <img src="assets/icons/logo.svg" alt="FoodZero" class="logo-img">
+        </a>
+
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Відкрити меню">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Головна навігація">
+          <ul class="nav-list">
+            <li><a href="#">Меню</a></li>
+            <li><a href="#">Про нас</a></li>
+            <li><a href="tel:+86852346000">+86 852 346 000</a></li>
+            <li><a class="btn btn--outline" href="#">Reservations</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO: перший екран. Контент/стилі буде дороблено на наступних кроках -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <h1 id="hero-title"><span class="sr-only">FoodZero — </span>Healthy Eating is important part of lifestyle</h1>
+            <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu.</p>
+          </div>
+          <figure class="hero__media">
+            <img src="assets/img/hero-1.jpg" alt="Стейк із цибулею на білому блюді" width="800" height="600" loading="eager">
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>&copy; 2025 FoodZero</small>
+      </div>
+    </footer>
+
+    <script src="scripts.js" defer></script>
+  </body>
+</html>

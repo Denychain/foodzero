@@ -1,0 +1,121 @@
+/* ====== Базові стилі: mobile-first (оновлено під сітку Figma) ====== */
+:root{
+  /* Palette з макету */
+  --green-900: #233000;
+  --green-700: #5E6600;
+  --green-500: #9CAA00;
+  --sage-50:  #EBF0E4;
+  --gray-900: #000000;
+  --gray-600: #4D4D4D;
+  --gray-400: #B0B0B0;
+  --white:    #ffffff;
+
+  /* Тема */
+  --bg: var(--green-900);
+  --text: var(--sage-50);
+  --muted: #cfd6c8;
+  --accent: var(--green-500);
+  --stroke: var(--sage-50);
+
+  /* Сітка Figma */
+  --content: 1644px;       /* ширина контенту */
+  --gutter-desktop: 60px;  /* відступ між колонками */
+  --columns: 12;
+
+  /* Типографіка */
+  --fs-base: 16px;
+}
+
+*{ box-sizing: border-box; }
+html:focus-within{ scroll-behavior: smooth; }
+html,body{ height: 100%; }
+body{
+  margin:0;
+  color:var(--text);
+  background:var(--bg);
+  font: 400 var(--fs-base)/1.6 "Lato", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+h1,h2,h3,h4,h5,h6{ font-family: "Rufina", Georgia, serif; line-height: 1.1; margin:0 0 .5em; }
+h1{ font-weight:700; font-size: clamp(2rem, 6vw, 4.5rem); }
+
+img{ max-width:100%; display:block; height:auto; }
+
+.container{ width: min(100% - 2rem, var(--content)); margin-inline:auto; }
+
+/* Skip link */
+.skip-link{ position: absolute; left: -9999px; top: auto; }
+.skip-link:focus{
+  left: 1rem; top: 1rem; background:#000; color:#fff; padding:.5rem .75rem; z-index:1000;
+}
+
+/* Header */
+.site-header{ position: sticky; top:0; z-index: 100; backdrop-filter: blur(2px); }
+.header__inner{
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  padding: .875rem 0;
+}
+.logo{ display:flex; align-items:center; gap:.5rem; color:var(--text); text-decoration:none; font-weight:600; letter-spacing:.2px; }
+.logo-img { height: 28px; width: auto; display: block; }
+
+/* Nav */
+.nav-toggle{
+  appearance:none; border:0; background:transparent; padding:.25rem;
+  width:40px; height:32px; display:grid; place-content:center; gap:4px; cursor:pointer;
+}
+.nav-toggle .bar{ width:24px; height:2px; background:var(--text); display:block; }
+
+.site-nav{ display:none; }
+.site-nav[data-open="true"]{ display:block; }
+.nav-list{ list-style:none; margin:0; padding:0; display:flex; gap:1rem; align-items:center; }
+.nav-list a{ color:var(--text); text-decoration:none; }
+.btn{ display:inline-block; padding:.6rem 1rem; border-radius:6px; }
+.btn--outline{ border:1px solid var(--stroke); }
+
+/* Hero */
+.hero{ padding: 2rem 0 3rem; }
+.hero__grid{ display:grid; gap:1.25rem; } /* mobile stack */
+.hero__copy .lede{ max-width: 36ch; color: var(--muted); }
+
+/* Debug grid overlay (натисни клавішу G) */
+.debug-grid::before{
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 999;
+  background:
+    linear-gradient(to right,
+      rgba(156,170,0,.12) 0,
+      rgba(156,170,0,.12) calc((100% - var(--content)) / 2),
+      transparent calc((100% - var(--content)) / 2)
+    ),
+    repeating-linear-gradient(to right,
+      rgba(235,240,228,.35) 0,
+      rgba(235,240,228,.35) calc((100% - var(--content)) / 2 + 82px),
+      transparent calc((100% - var(--content)) / 2 + 82px),
+      transparent calc((100% - var(--content)) / 2 + 82px + 60px)
+    );
+  mix-blend-mode: normal;
+}
+/* Inset container overlay using CSS grid would be more precise; this is lightweight helper. */
+
+/* Від 769px — готуємо сітку 12 колонок */
+@media (min-width: 769px){
+  .hero{ padding: 4rem 0 5rem; }
+  .hero__grid{
+    grid-template-columns: repeat(var(--columns), 1fr);
+    column-gap: var(--gutter-desktop);
+    row-gap: 2rem;
+  }
+  .hero__copy{ grid-column: 1 / span 6; }
+  .hero__media{ grid-column: 7 / span 6; align-self: center; }
+}
+
+/* Навігація десктопом */
+@media (min-width: 769px){
+  .nav-toggle{ display:none; }
+  .site-nav{ display:block; }
+}
+
+/* 1025+ — збільшуємо контейнер до 1644px */
+@media (min-width: 1025px){
+  .container{ width: min(100% - 2rem, var(--content)); }
+}
