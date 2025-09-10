@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>FoodZero — Home</title>
     <meta name="description" content="FoodZero — restaurant with a focus on healthy eating." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,7 +35,7 @@
         
         <div class="header__cta">
           <a class="header__phone" href="tel:+86852346000">+86 852 346 000</a>
-          <a href="#reservations" class="header__reservations btn btn--ghost" aria-disabled="true">Reservations</a>
+          <button type="button" class="header__reservations btn btn--ghost" disabled>Reservations</button>
         </div>
 
         
@@ -52,11 +52,7 @@
 
     
     
-    <aside id="nav-overlay"
-      class="nav-overlay"
-      aria-hidden="true" role="dialog" aria-modal="true"
-      aria-labelledby="overlay-title"
-      style="--nav-bg:url('assets/img/navi_bg.jpg')">
+    <div id="nav-overlay" class="nav-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="overlay-title" style="--nav-bg:url('assets/img/navi_bg.jpg')">
       <div class="overlay__inner">
         <button class="overlay__close" aria-label="Close menu"></button>
 
@@ -122,7 +118,7 @@
           </div>
         </aside>
       </div>
-    </aside>
+    </div>
 
     
     <main id="main">
@@ -378,7 +374,7 @@
       <section class="testimonials" aria-labelledby="testimonials-title">
         <h4 id="testimonials-title">What people say</h4>
 
-        <div class="testimonials__viewport">
+        <div class="testimonials__viewport" id="testimonials">
           <img src="assets/img/quotes-bg.png" alt="" aria-hidden="true" class="testimonials__quotes">
 
           <blockquote class="testimonial" data-index="1">
@@ -480,7 +476,7 @@
       </div>
     </div>
 
-    <div id="bottom-bar" class="bottom-bar" aria-label="Quick actions">
+    <div id="bottom-bar" class="bottom-bar" role="region" aria-label="Quick actions">
       <a class="bb__btn bb__btn--ghost" href="tel:+86852346000" aria-label="Call us">Call</a>
       <button class="bb__btn bb__btn--accent" type="button" disabled>Reserve</button>
     </div>
