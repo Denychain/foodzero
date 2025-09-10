@@ -1,62 +1,490 @@
 <!doctype html>
-<html lang="uk">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FoodZero — Головна</title>
-    <meta name="description" content="FoodZero — ресторан із фокусом на здорове харчування.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Замінити шрифти на ті, що в макеті, якщо відрізняються -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Rufina:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <title>FoodZero — Home</title>
+    <meta name="description" content="FoodZero — restaurant with a focus on healthy eating." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Rufina:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <a class="skip-link" href="#main">Перейти до контенту</a>
 
-    <header class="site-header" id="top" role="banner">
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    
+    <header class="site-header" id="top">
       <div class="container header__inner">
-        <a class="logo" href="/" aria-label="На головну">
-         <img src="assets/icons/logo.svg" alt="FoodZero" class="logo-img">
+        <a class="logo" href="/" aria-label="Home">
+          <img src="assets/icons/logo.svg" alt="FoodZero" class="logo-img" width="120" height="28" />
         </a>
 
-
-        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Відкрити меню">
+        
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-overlay"
+          aria-label="Open menu"
+          aria-haspopup="dialog">
           <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </button>
 
-        <nav id="site-nav" class="site-nav" aria-label="Головна навігація">
+        
+        <div class="header__cta">
+          <a class="header__phone" href="tel:+86852346000">+86 852 346 000</a>
+          <a href="#reservations" class="header__reservations btn btn--ghost" aria-disabled="true">Reservations</a>
+        </div>
+
+        
+        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
           <ul class="nav-list">
-            <li><a href="#">Меню</a></li>
-            <li><a href="#">Про нас</a></li>
-            <li><a href="tel:+86852346000">+86 852 346 000</a></li>
-            <li><a class="btn btn--outline" href="#">Reservations</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">About</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
+    
+    
+    <aside id="nav-overlay"
+      class="nav-overlay"
+      aria-hidden="true" role="dialog" aria-modal="true"
+      aria-labelledby="overlay-title"
+      style="--nav-bg:url('assets/img/navi_bg.jpg')">
+      <div class="overlay__inner">
+        <button class="overlay__close" aria-label="Close menu"></button>
+
+        <nav class="overlay__nav" aria-labelledby="overlay-title">
+          <h2 id="overlay-title" class="sr-only">Site navigation</h2>
+          <ul class="overlay__list">
+            <li class="overlay__item">
+              <a class="overlay__link" href="#">
+                <span class="overlay__dot" aria-hidden="true"></span> HOME
+              </a>
+            </li>
+            <li class="overlay__item">
+              <a class="overlay__link" href="#">
+                <span class="overlay__dot" aria-hidden="true"></span> MENU
+              </a>
+            </li>
+            <li class="overlay__item has-sub">
+              <button class="overlay__link" type="button" aria-expanded="false">
+                <span class="overlay__dot" aria-hidden="true"></span> BLOGS
+              </button>
+              <ul class="overlay__sub">
+                <li><a href="#">1 Column</a></li>
+                <li><a href="#">2 Columns</a></li>
+                <li><a href="#">Sidebar Post</a></li>
+              </ul>
+            </li>
+            <li class="overlay__item">
+              <a class="overlay__link" href="#">
+                <span class="overlay__dot" aria-hidden="true"></span> ABOUT
+              </a>
+            </li>
+            <li class="overlay__item">
+              <a class="overlay__link" href="#">
+                <span class="overlay__dot" aria-hidden="true"></span> CONTACT
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <aside class="overlay__aside">
+          <h3 class="overlay__aside-title">Contact</h3>
+          <div class="overlay__aside-rule" aria-hidden="true"></div>
+          <div class="overlay__contact">
+            <p>
+              <a href="tel:+86852346000">+86 852 346 000</a><br />
+              <a href="mailto:info@foodzero.com">info@foodzero.com</a>
+            </p>
+            <p class="overlay__addr">1959 Sepulveda Blvd.<br />Culver City, CA, 90230</p>
+            <div class="overlay__social">
+              <a href="https://instagram.com" aria-label="Instagram">
+                <img src="assets/icons/instagram.svg" alt="Instagram">
+              </a>
+              <a href="https://twitter.com" aria-label="Twitter">
+                <img src="assets/icons/twitter.svg" alt="Twitter">
+              </a>
+              <a href="https://facebook.com" aria-label="Facebook">
+                <img src="assets/icons/facebook.svg" alt="Facebook">
+              </a>
+              <a href="https://youtube.com" aria-label="YouTube">
+                <img src="assets/icons/youtube.svg" alt="YouTube">
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </aside>
+
+    
     <main id="main">
-      <!-- HERO: перший екран. Контент/стилі буде дороблено на наступних кроках -->
       <section class="hero" aria-labelledby="hero-title">
         <div class="container hero__grid">
+          <a class="hero__scroll" href="#after-hero" aria-label="Scroll down">Scroll</a>
+
           <div class="hero__copy">
-            <h1 id="hero-title"><span class="sr-only">FoodZero — </span>Healthy Eating is important part of lifestyle</h1>
-            <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu.</p>
+            <h1 id="hero-title">
+              <span class="sr-only">FoodZero — </span>
+              Healthy Eating<br />is important<br />part of lifestyle
+            </h1>
+            <p class="lede">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu.
+            </p>
           </div>
+
           <figure class="hero__media">
-            <img src="assets/img/hero-1.jpg" alt="Стейк із цибулею на білому блюді" width="800" height="600" loading="eager">
+            <img
+              src="assets/img/meat_hero.jpg"
+              alt="Steak with onions and spices on a white plate"
+              width="2592"
+              height="3456"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high" />
+            <figcaption class="sr-only">Signature dish of the restaurant.</figcaption>
           </figure>
+
+          <div class="hero__pills" aria-hidden="true">
+            <div class="pill pill--1"><img src="assets/img/kurkuma.png" alt="" /></div>
+            <div class="pill pill--2"><img src="assets/img/muskat.png" alt="" /></div>
+            <div class="pill pill--3"><img src="assets/img/mustard.png" alt="" /></div>
+          </div>
+        </div>
+      </section>
+
+      <div id="after-hero" class="sr-only" aria-hidden="true"></div>
+
+      <section class="plan" aria-labelledby="plan-title">
+        <h3 id="plan-title">Start to plan your diet today</h3>
+        <p class="plan__text plan__text--primary">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu.
+        </p>
+        <figure class="plan__item plan__item--big">
+          <img src="assets/img/plan-soup.jpg" alt="Creamy clam soup in a bowl">
+        </figure>
+        <figure class="plan__item plan__item--small">
+          <img src="assets/img/plan-spices.jpg" alt="Transparent salt and pepper grinders">
+        </figure>
+        <p class="plan__text plan__text--aside">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu.
+        </p>
+      </section>
+
+      <section class="menu" aria-labelledby="menu-title">
+        <div class="menu__header">
+          <h2 id="menu-title">Our Menu</h2>
+          <p>This is a section of your menu. Give your section a brief description</p>
+        </div>
+
+        <div class="menu__list">
+          <article class="menu__item">
+            <span class="menu__price">$20</span>
+            <h3 class="menu__name">Deep Sea Snow White Cod Fillet</h3>
+            <p class="menu__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </article>
+
+          <article class="menu__item">
+            <span class="menu__price">$22</span>
+            <h3 class="menu__name">Steak With Rosemary Butter</h3>
+            <p class="menu__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </article>
+
+          <article class="menu__item">
+            <span class="menu__price">$18</span>
+            <h3 class="menu__name">Cucumber Salad</h3>
+            <p class="menu__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </article>
+
+          <article class="menu__item">
+            <span class="menu__price">$90</span>
+            <h3 class="menu__name">Natural Wine Pairing</h3>
+            <p class="menu__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </article>
+        </div>
+        <img src="assets/img/menu-decor.png" alt="" aria-hidden="true" class="menu__decor">
+      </section>
+      <section class="cook" aria-labelledby="cook-title">
+        <div class="cook__content">
+          <h2 id="cook-title">Excellent<br>cook</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id penatibus imperdiet. 
+            Turpis egestas ultricies purus auctor tincidunt lacus nunc.
+          </p>
+        </div>
+
+          <div class="cook__images">
+            <img src="assets/img/cook-chef.png" alt="Chef preparing dish" class="cook__img cook__img--chef">
+            <img src="assets/img/cook-plate.png" alt="Plate with salmon" class="cook__img cook__img--plate">
+          </div>
+
+        <img src="assets/img/leaf-left.svg" alt="" aria-hidden="true" class="cook__leaf cook__leaf--left">
+        <img src="assets/img/leaf-right.svg" alt="" aria-hidden="true" class="cook__leaf cook__leaf--right">
+      </section>
+      <section class="features" aria-labelledby="features-title">
+        <h2 id="features-title" class="visually-hidden">Key Features</h2>
+        <div class="features__list">
+          <article class="feature">
+            <div class="feature__icon">
+              <img src="assets/icons/fish.svg" alt="">
+            </div>
+            <h3 class="feature__title">Premium Quality</h3>
+            <p class="feature__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature__icon">
+              <img src="assets/icons/carrot.svg" alt="">
+            </div>
+            <h3 class="feature__title">Seasonal Vegetables</h3>
+            <p class="feature__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature__icon">
+              <img src="assets/icons/fruit.svg" alt="">
+            </div>
+            <h3 class="feature__title">Fresh Fruit</h3>
+            <p class="feature__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="posts" aria-labelledby="posts-title">
+        <h2 id="posts-title" class="visually-hidden">Latest posts</h2>
+        <div class="posts__list">
+          <article class="post">
+            <figure class="post__media">
+              <img src="assets/img/post-1.jpg" alt="Fruit and vegetables plated">
+              <span class="post__badge">Fashion</span>
+            </figure>
+
+            <div class="post__meta">
+              <img class="post__avatar" src="assets/img/avatar-julie.jpg" alt="Julie Christie">
+              <span class="post__author">Julie Christie</span>
+              <span class="post__sep">•</span>
+              <time datetime="2021-10-17">October 17,2021</time>
+              <span class="post__sep">•</span>
+              <time class="post__time" datetime="15:33">3:33 pm</time>
+              <span class="post__sep">•</span>
+              <a href="#" class="post__comments">2 comments</a>
+            </div>
+
+            <h3 class="post__title">Fruit and vegetables and protection against diseases</h3>
+            <hr class="post__rule">
+            <p class="post__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <a href="#" class="post__more">
+              Read More
+              <svg class="post__arrow" width="26" height="12" viewBox="0 0 26 12" aria-hidden="true">
+                <path d="M0 6h22M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="post">
+            <figure class="post__media">
+              <img src="assets/img/post-2.jpg" alt="Asparagus in a wooden bowl">
+              <span class="post__badge">Fashion</span>
+            </figure>
+
+            <div class="post__meta">
+              <img class="post__avatar" src="assets/img/avatar-dianne.jpg" alt="Dianne Russell">
+              <span class="post__author">Dianne Russell</span>
+              <span class="post__sep">•</span>
+              <time datetime="2021-10-17">October 17,2021</time>
+              <span class="post__sep">•</span>
+              <time class="post__time" datetime="15:33">3:33 pm</time>
+              <span class="post__sep">•</span>
+              <a href="#" class="post__comments">2 comments</a>
+            </div>
+
+            <h3 class="post__title">Asparagus Spring Salad with Rocket, Goat's Cheese</h3>
+            <hr class="post__rule">
+            <p class="post__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <a href="#" class="post__more">
+              Read More
+              <svg class="post__arrow" width="26" height="12" viewBox="0 0 26 12" aria-hidden="true">
+                <path d="M0 6h22M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+        </div>
+      </section>
+      <section class="reservation" aria-labelledby="reservation-title">
+        <div class="reservation__header">
+          <h2 id="reservation-title">Make a Reservation</h2>
+          <p>Get in touch with restaurant</p>
+        </div>
+
+        <form action="#" method="post" class="reservation__form">
+          <input type="text" name="date" placeholder="16/22/2021" required>
+          <select name="time" required>
+            <option value="" disabled selected>6:00 pm</option>
+            <option value="5:00">5:00 pm</option>
+            <option value="6:00">6:00 pm</option>
+            <option value="7:00">7:00 pm</option>
+          </select>
+          <select name="persons" required>
+            <option value="" disabled selected>2 Person</option>
+            <option value="1">1 Person</option>
+            <option value="2">2 Person</option>
+            <option value="3">3 Person</option>
+            <option value="4">4 Person</option>
+          </select>
+          <button type="submit" class="reservation__btn">Book Now</button>
+        </form>
+      </section>
+      <section class="categories" aria-labelledby="categories-title">
+        <div class="categories__header">
+          <h2 id="categories-title">Calories Energy Balance</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <div class="categories__list">
+          <article class="category">
+            <img src="assets/img/starters.jpg" alt="Starters" class="category__img">
+            <div class="category__overlay">
+              <h3 class="category__title">Starters</h3>
+              <span class="category__arrow">→</span>
+            </div>
+          </article>
+
+          <article class="category">
+            <img src="assets/img/mains.jpg" alt="Mains" class="category__img">
+            <div class="category__overlay">
+              <h3 class="category__title">Mains</h3>
+              <span class="category__arrow">→</span>
+            </div>
+          </article>
+
+          <article class="category">
+            <img src="assets/img/soups.jpg" alt="Soups" class="category__img">
+            <div class="category__overlay">
+              <h3 class="category__title">Soups</h3>
+              <span class="category__arrow">→</span>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="testimonials" aria-labelledby="testimonials-title">
+        <h4 id="testimonials-title">What people say</h4>
+
+        <div class="testimonials__viewport">
+          <img src="assets/img/quotes-bg.png" alt="" aria-hidden="true" class="testimonials__quotes">
+
+          <blockquote class="testimonial" data-index="1">
+            <p>“ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id penatibus imperdiet. Turpis egestas ultricies purus Lorem ipsum dolor sit amet.”</p>
+          </blockquote>
+
+          <div class="testimonial__author">
+            <img class="author__avatar" src="assets/img/avatar-1.jpg" alt="John Doe">
+            <div class="author__meta">
+              <strong class="author__name">John Doe</strong>
+              <span class="author__role">Blogger</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials__controls" aria-controls="testimonials">
+          <button type="button" class="testimonials__prev" aria-label="Previous">←</button>
+          <span class="testimonials__counter"><span class="current">1</span> / <span class="total">3</span></span>
+          <button type="button" class="testimonials__next" aria-label="Next">→</button>
         </div>
       </section>
     </main>
+    <footer class="footer">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <h2 class="footer__logo">Food<br>Zero.</h2>
+        </div>
 
-    <footer class="site-footer">
-      <div class="container">
-        <small>&copy; 2025 FoodZero</small>
+        <div class="footer__contact">
+          <h3>Contact</h3>
+          <p>+1 86 852 346 000<br>
+            info@foodzero.com<br>
+            1959 Sepulveda Blvd.<br>
+            Culver City, CA, 90230
+          </p>
+        </div>
+
+        <div class="footer__subscribe">
+          <h3>Never Miss a Recipe</h3>
+          <form action="#" method="post" class="subscribe__form">
+            <input type="email" name="email" placeholder="Email Address" required>
+            <button type="submit" class="subscribe__btn">Subscribe</button>
+          </form>
+          <p class="subscribe__note">
+            Join our subscribers and get best recipe delivered each week!
+          </p>
+        </div>
+      </div>
+
+      <hr class="footer__line">
+
+      <div class="footer__bottom">
+        <p>© 2020 Zero Inc. All rights Reserved</p>
+        <div class="footer__socials">
+          <a href="https://instagram.com" aria-label="Instagram">
+            <img src="assets/icons/instagram.svg" alt="Instagram">
+          </a>
+          <a href="https://twitter.com" aria-label="Twitter">
+            <img src="assets/icons/twitter.svg" alt="Twitter">
+          </a>
+          <a href="https://facebook.com" aria-label="Facebook">
+            <img src="assets/icons/facebook.svg" alt="Facebook">
+          </a>
+          <a href="https://youtube.com" aria-label="YouTube">
+            <img src="assets/icons/youtube.svg" alt="YouTube">
+          </a>
+        </div>
       </div>
     </footer>
+
+    <div class="modal" id="reservation-modal" hidden>
+      <div class="modal__overlay"></div>
+      <div class="modal__content">
+        <button class="modal__close" aria-label="Close">&times;</button>
+
+        <h2>Make a Reservation</h2>
+        <p>Fill in your details to confirm booking</p>
+
+        <form action="#" method="post" class="modal__form">
+          <input type="text" name="date" placeholder="Select date" required>
+          <select name="time" required>
+            <option value="" disabled selected>Select time</option>
+            <option value="5:00">5:00 pm</option>
+            <option value="6:00">6:00 pm</option>
+            <option value="7:00">7:00 pm</option>
+          </select>
+          <select name="persons" required>
+            <option value="" disabled selected>Select persons</option>
+            <option value="1">1 Person</option>
+            <option value="2">2 Persons</option>
+            <option value="3">3 Persons</option>
+            <option value="4">4 Persons</option>
+          </select>
+          <input type="text" name="fullname" placeholder="Your Name" required>
+          <input type="tel" name="phone" placeholder="Phone Number" required>
+
+          <button type="submit" class="modal__btn">Confirm Booking</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="bottom-bar" class="bottom-bar" aria-label="Quick actions">
+      <a class="bb__btn bb__btn--ghost" href="tel:+86852346000" aria-label="Call us">Call</a>
+      <button class="bb__btn bb__btn--accent" type="button" disabled>Reserve</button>
+    </div>
+  
 
     <script src="scripts.js" defer></script>
   </body>
