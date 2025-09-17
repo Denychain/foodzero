@@ -16,7 +16,7 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     
-    <header class="site-header" id="top">
+    <header class="site-header" id="top" data-header>
       <div class="container header__inner">
         <a class="logo" href="/" aria-label="Home">
           <img src="assets/icons/logo.svg" alt="FoodZero" class="logo-img" width="120" height="28" >
@@ -35,18 +35,8 @@
         
         <div class="header__cta">
           <a class="header__phone" href="tel:+86852346000">+86 852 346 000</a>
-          <button type="button" class="header__reservations btn btn--ghost" disabled>Reservations</button>
+         <button type="button" class="header__reservations btn btn--ghost js-reserve" data-source="header">Reservations</button>
         </div>
-
-        
-        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-          <ul class="nav-list">
-            <li class="is-active"><a href="#" aria-current="page">Home</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
-        </nav>
       </div>
     </header>
 
@@ -124,18 +114,18 @@
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
         <div class="container hero__grid">
-          <a class="hero__scroll" href="#after-hero" aria-label="Scroll down">Scroll</a>
 
           <div class="hero__copy">
-            <h1 id="hero-title">
+            <h1 id="hero-title" class="hero-heading">
               <span class="sr-only">FoodZero — </span>
               Healthy Eating<br>is important<br>part of lifestyle
             </h1>
             <p class="lede">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu.
             </p>
+            <a class="hero__scroll" href="#after-hero" aria-label="Scroll down">Scroll</a>
           </div>
-
+          
           <figure class="hero__media">
             <img
               src="assets/img/meat_hero.jpg"
@@ -150,8 +140,8 @@
 
           <div class="hero__pills" aria-hidden="true">
             <div class="pill pill--1"><img src="assets/img/kurkuma.png" alt=""></div>
-            <div class="pill pill--2"><img src="assets/img/muskat.png" alt=""></div>
-            <div class="pill pill--3"><img src="assets/img/mustard.png" alt=""></div>
+            <div class="pill pill--2"><img src="assets/img/mustard.png" alt=""></div>
+            <div class="pill pill--3"><img src="assets/img/muskat.png" alt=""></div>
           </div>
         </div>
       </section>
@@ -159,102 +149,122 @@
       <div id="after-hero" class="sr-only" aria-hidden="true"></div>
 
       <section class="plan" aria-labelledby="plan-title">
-        <h3 id="plan-title">Start to plan your diet today</h3>
-        <p class="plan__text plan__text--primary">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu.
-        </p>
-        <figure class="plan__item plan__item--big">
-          <img src="assets/img/plan-soup.jpg" alt="Creamy clam soup in a bowl">
-        </figure>
-        <figure class="plan__item plan__item--small">
-          <img src="assets/img/plan-spices.jpg" alt="Transparent salt and pepper grinders">
-        </figure>
-        <p class="plan__text plan__text--aside">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu.
-        </p>
-      </section>
+        <div class="plan__inner">
 
-      <section class="menu" aria-labelledby="menu-title">
-        <div class="menu__header">
-          <h2 id="menu-title">Our Menu</h2>
-          <p>This is a section of your menu. Give your section a brief description</p>
-        </div>
+          <div class="plan__left">
+            <figure class="plan__item plan__item--big">
+              <img src="assets/img/plan-soup.jpg" alt="Creamy clam soup in a bowl">
+            </figure>
 
-        <div class="menu__list">
-          <article class="menu__item">
-            <span class="menu__price">$20</span>
-            <h3 class="menu__name">Deep Sea Snow White Cod Fillet</h3>
-            <p class="menu__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </article>
+            <h3 id="plan-title">Start to plan your diet today</h3>
 
-          <article class="menu__item">
-            <span class="menu__price">$22</span>
-            <h3 class="menu__name">Steak With Rosemary Butter</h3>
-            <p class="menu__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </article>
-
-          <article class="menu__item">
-            <span class="menu__price">$18</span>
-            <h3 class="menu__name">Cucumber Salad</h3>
-            <p class="menu__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </article>
-
-          <article class="menu__item">
-            <span class="menu__price">$90</span>
-            <h3 class="menu__name">Natural Wine Pairing</h3>
-            <p class="menu__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </article>
-        </div>
-        <img src="assets/img/menu-decor.png" alt="" aria-hidden="true" class="menu__decor">
-      </section>
-      <section class="cook" aria-labelledby="cook-title">
-        <div class="cook__content">
-          <h2 id="cook-title">Excellent<br>cook</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id penatibus imperdiet. 
-            Turpis egestas ultricies purus auctor tincidunt lacus nunc.
-          </p>
-        </div>
-
-          <div class="cook__images">
-            <img src="assets/img/cook-chef.png" alt="Chef preparing dish" class="cook__img cook__img--chef">
-            <img src="assets/img/cook-plate.png" alt="Plate with salmon" class="cook__img cook__img--plate">
+            <p class="plan__text plan__text--primary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu.
+            </p>
           </div>
 
-        <img src="assets/img/leaf-left.svg" alt="" aria-hidden="true" class="cook__leaf cook__leaf--left">
-        <img src="assets/img/leaf-right.svg" alt="" aria-hidden="true" class="cook__leaf cook__leaf--right">
+          <div class="plan__right">
+            <figure class="plan__item plan__item--small">
+              <img src="assets/img/plan-spices.jpg" alt="Transparent salt and pepper grinders">
+            </figure>
+
+            <p class="plan__text plan__text--aside">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu.
+            </p>
+          </div>
+
+        </div>
       </section>
+
+
+      <section class="menu" aria-labelledby="menu-title">
+        <div class="menu_inner">
+          <div class="menu__header">
+          <h2 id="menu-title">Our Menu</h2>
+          <p>This is a section of your menu. Give your section a brief description</p>
+          </div>
+
+          <div class="menu__list">
+            <article class="menu__item">
+              <span class="menu__price">$20</span>
+              <h3 class="menu__name">Deep Sea Snow White Cod Fillet</h3>
+              <p class="menu__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </article>
+
+            <article class="menu__item">
+              <span class="menu__price">$22</span>
+              <h3 class="menu__name">Steak With Rosemary Butter</h3>
+              <p class="menu__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </article>
+
+            <article class="menu__item">
+              <span class="menu__price">$18</span>
+              <h3 class="menu__name">Cucumber Salad</h3>
+              <p class="menu__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </article>
+
+            <article class="menu__item">
+              <span class="menu__price">$90</span>
+              <h3 class="menu__name">Natural Wine Pairing</h3>
+              <p class="menu__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </article>
+          </div>
+          <img src="assets/img/menu-decor.png" alt="" aria-hidden="true" class="menu__decor">
+      </div>
+      </section>
+
+      <section class="cook" aria-labelledby="cook-title">
+        <div class="cook_inner">
+          <div class="cook__content">
+            <h2 id="cook-title">Excellent<br>cook</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id penatibus imperdiet. 
+              Turpis egestas ultricies purus auctor tincidunt lacus nunc.
+            </p>
+          </div>
+
+            <div class="cook__images">
+              <img src="assets/img/cook-chef.png" alt="Chef preparing dish" class="cook__img cook__img--chef">
+              <img src="assets/img/cook-plate.png" alt="Plate with salmon" class="cook__img cook__img--plate">
+            </div>
+          <img src="assets/img/leaf-left.svg" alt="" aria-hidden="true" class="cook__leaf cook__leaf--left">
+          <img src="assets/img/leaf-right.svg" alt="" aria-hidden="true" class="cook__leaf cook__leaf--right">
+        </div>
+      </section>
+
       <section class="features" aria-labelledby="features-title">
-        <h2 id="features-title" class="visually-hidden">Key Features</h2>
-        <div class="features__list">
-          <article class="feature">
-            <div class="feature__icon">
-              <img src="assets/icons/fish.svg" alt="">
-            </div>
-            <h3 class="feature__title">Premium Quality</h3>
-            <p class="feature__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu</p>
-          </article>
+        <div class="features_inner">
+          <h2 id="features-title" class="sr-only">Key Features</h2>
+          <div class="features__list">
+            <article class="feature">
+              <div class="feature__icon">
+                <img src="assets/icons/fish.svg" alt="">
+              </div>
+              <h3 class="feature__title">Premium Quality</h3>
+              <p class="feature__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu</p>
+            </article>
 
-          <article class="feature">
-            <div class="feature__icon">
-              <img src="assets/icons/carrot.svg" alt="">
-            </div>
-            <h3 class="feature__title">Seasonal Vegetables</h3>
-            <p class="feature__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu</p>
-          </article>
+            <article class="feature">
+              <div class="feature__icon">
+                <img src="assets/icons/carrot.svg" alt="">
+              </div>
+              <h3 class="feature__title">Seasonal Vegetables</h3>
+              <p class="feature__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu</p>
+            </article>
 
-          <article class="feature">
-            <div class="feature__icon">
-              <img src="assets/icons/fruit.svg" alt="">
-            </div>
-            <h3 class="feature__title">Fresh Fruit</h3>
-            <p class="feature__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu</p>
-          </article>
+            <article class="feature">
+              <div class="feature__icon">
+                <img src="assets/icons/fruit.svg" alt="">
+              </div>
+              <h3 class="feature__title">Fresh Fruit</h3>
+              <p class="feature__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu</p>
+            </article>
+          </div>
         </div>
       </section>
 
       <section class="posts" aria-labelledby="posts-title">
-        <h2 id="posts-title" class="visually-hidden">Latest posts</h2>
+        <h2 id="posts-title" class="sr-only">Latest posts</h2>
         <div class="posts__list">
           <article class="post">
             <figure class="post__media">
@@ -263,7 +273,7 @@
             </figure>
 
             <div class="post__meta">
-              <img class="post__avatar" src="assets/img/avatar-julie.jpg" alt="Julie Christie">
+              <img class="post__avatar" src="assets/img/avatar-julie.png" alt="Julie Christie">
               <span class="post__author">Julie Christie</span>
               <span class="post__sep">•</span>
               <time datetime="2021-10-17">October 17,2021</time>
@@ -292,7 +302,7 @@
             </figure>
 
             <div class="post__meta">
-              <img class="post__avatar" src="assets/img/avatar-dianne.jpg" alt="Dianne Russell">
+              <img class="post__avatar" src="assets/img/avatar-dianne.png" alt="Dianne Russell">
               <span class="post__author">Dianne Russell</span>
               <span class="post__sep">•</span>
               <time datetime="2021-10-17">October 17,2021</time>
@@ -315,30 +325,56 @@
           </article>
         </div>
       </section>
+
       <section class="reservation" aria-labelledby="reservation-title">
         <div class="reservation__header">
           <h2 id="reservation-title">Make a Reservation</h2>
           <p>Get in touch with restaurant</p>
         </div>
-
-        <form action="#" method="post" class="reservation__form">
+        <form action="#" method="post" class="reservation__form" autocomplete="off">
           <input type="text" name="date" placeholder="16/22/2021" required>
-          <select name="time" required>
-            <option value="" disabled selected>6:00 pm</option>
-            <option value="5:00">5:00 pm</option>
-            <option value="6:00">6:00 pm</option>
-            <option value="7:00">7:00 pm</option>
-          </select>
-          <select name="persons" required>
-            <option value="" disabled selected>2 Person</option>
-            <option value="1">1 Person</option>
-            <option value="2">2 Person</option>
-            <option value="3">3 Person</option>
-            <option value="4">4 Person</option>
-          </select>
-          <button type="submit" class="reservation__btn">Book Now</button>
+          <input type="hidden" name="time" value="6:00">
+          <div class="custom-select" data-target="time">
+            <button
+              type="button"
+              class="custom-select__button"
+              id="select-time"
+              aria-haspopup="listbox"
+              aria-expanded="false">
+              <span class="custom-select__label">6:00 pm</span>
+              <span class="custom-select__arrow" aria-hidden="true"></span>
+            </button>
+
+            <ul class="custom-select__list" id="list-time" role="listbox" aria-labelledby="select-time">
+              <li class="custom-select__option" role="option" data-value="5:00">5:00 pm</li>
+              <li class="custom-select__option" role="option" data-value="6:00" aria-selected="true">6:00 pm</li>
+              <li class="custom-select__option" role="option" data-value="7:00">7:00 pm</li>
+            </ul>
+          </div>
+          <input type="hidden" name="persons" value="2">
+          <div class="custom-select" data-target="persons">
+            <button
+              type="button"
+              class="custom-select__button"
+              id="select-persons"
+              aria-haspopup="listbox"
+              aria-expanded="false">
+              <span class="custom-select__label">2 Person</span>
+              <span class="custom-select__arrow" aria-hidden="true"></span>
+            </button>
+            <ul class="custom-select__list" id="list-persons" role="listbox" aria-labelledby="select-persons">
+              <li class="custom-select__option" role="option" data-value="1">1 Person</li>
+              <li class="custom-select__option" role="option" data-value="2" aria-selected="true">2 Person</li>
+              <li class="custom-select__option" role="option" data-value="3">3 Person</li>
+              <li class="custom-select__option" role="option" data-value="4">4 Person</li>
+            </ul>
+          </div>
+          <button type="button" class="reservation__btn js-reserve" data-source="book-now">
+            Book Now
+          </button>
         </form>
       </section>
+
       <section class="categories" aria-labelledby="categories-title">
         <div class="categories__header">
           <h2 id="categories-title">Calories Energy Balance</h2>
@@ -382,7 +418,7 @@
           </blockquote>
 
           <div class="testimonial__author">
-            <img class="author__avatar" src="assets/img/avatar-1.jpg" alt="John Doe">
+            <img class="author__avatar" src="assets/img/avatar-1.png" alt="John Doe">
             <div class="author__meta">
               <strong class="author__name">John Doe</strong>
               <span class="author__role">Blogger</span>
@@ -401,15 +437,20 @@
       <div class="footer__top">
         <div class="footer__brand">
           <h2 class="footer__logo">Food<br>Zero.</h2>
-        </div>
+          </div>
 
         <div class="footer__contact">
           <h3>Contact</h3>
-          <p>+1 86 852 346 000<br>
-            info@foodzero.com<br>
+
+          <p class="footer__contact-lines">
+            <a href="tel:+186852346000">+1 86 852 346 000</a><br>
+            <a href="mailto:info@foodzero.com">info@foodzero.com</a>
+          </p>
+
+          <address class="footer__address">
             1959 Sepulveda Blvd.<br>
             Culver City, CA, 90230
-          </p>
+          </address>
         </div>
 
         <div class="footer__subscribe">
@@ -445,43 +486,64 @@
       </div>
     </footer>
 
-    <div class="modal" id="reservation-modal" hidden>
-      <div class="modal__overlay"></div>
-      <div class="modal__content">
-        <button class="modal__close" aria-label="Close">&times;</button>
+    <div class="modal" id="reserve-modal" aria-hidden="true"
+        role="dialog" aria-modal="true" aria-labelledby="reserve-title">
+      <div class="modal__backdrop"></div>
+      <div class="modal__content" role="document">
+        <button class="modal__close" type="button" aria-label="Close">&times;</button>
 
-        <h2>Make a Reservation</h2>
+        <h2 id="reserve-title">Make a Reservation</h2>
         <p>Fill in your details to confirm booking</p>
 
         <form action="#" method="post" class="modal__form">
           <input type="text" name="date" placeholder="Select date" required>
-          <select name="time" required>
-            <option value="" disabled selected>Select time</option>
-            <option value="5:00">5:00 pm</option>
-            <option value="6:00">6:00 pm</option>
-            <option value="7:00">7:00 pm</option>
-          </select>
-          <select name="persons" required>
-            <option value="" disabled selected>Select persons</option>
-            <option value="1">1 Person</option>
-            <option value="2">2 Persons</option>
-            <option value="3">3 Persons</option>
-            <option value="4">4 Persons</option>
-          </select>
+          <input type="hidden" name="time" value="6:00">
+          <div class="custom-select" data-target="time" aria-expanded="false">
+            <button type="button" class="custom-select__button" aria-haspopup="listbox" aria-expanded="false">
+              <span class="custom-select__label">6:00 pm</span>
+              <span class="custom-select__arrow" aria-hidden="true"></span>
+            </button>
+            <ul class="custom-select__list" role="listbox">
+              <li class="custom-select__option" role="option" data-value="5:00">5:00 pm</li>
+              <li class="custom-select__option" role="option" data-value="6:00" aria-selected="true">6:00 pm</li>
+              <li class="custom-select__option" role="option" data-value="7:00">7:00 pm</li>
+            </ul>
+          </div>
+          <input type="hidden" name="persons" value="2">
+          <div class="custom-select" data-target="persons" aria-expanded="false">
+            <button type="button" class="custom-select__button" aria-haspopup="listbox" aria-expanded="false">
+              <span class="custom-select__label">2 Persons</span>
+              <span class="custom-select__arrow" aria-hidden="true"></span>
+            </button>
+            <ul class="custom-select__list" role="listbox">
+              <li class="custom-select__option" role="option" data-value="1">1 Person</li>
+              <li class="custom-select__option" role="option" data-value="2" aria-selected="true">2 Persons</li>
+              <li class="custom-select__option" role="option" data-value="3">3 Persons</li>
+              <li class="custom-select__option" role="option" data-value="4">4 Persons</li>
+            </ul>
+          </div>
           <input type="text" name="fullname" placeholder="Your Name" required>
           <input type="tel" name="phone" placeholder="Phone Number" required>
-
+          <label class="sr-only" for="reserve-email">Email</label>
+          <input
+            type="email"
+            id="reserve-email"
+            name="email"
+            placeholder="Email Address"
+            autocomplete="email"
+            inputmode="email"
+            required
+          >
           <button type="submit" class="modal__btn">Confirm Booking</button>
         </form>
       </div>
     </div>
-
     <div id="bottom-bar" class="bottom-bar" role="region" aria-label="Quick actions">
       <a class="bb__btn bb__btn--ghost" href="tel:+86852346000" aria-label="Call us">Call</a>
-      <button class="bb__btn bb__btn--accent" type="button" disabled>Reserve</button>
+       <button type="button" class="bb__btn bb__btn--accent js-reserve" data-source="bottom">Reserv</button>
     </div>
   
-
     <script src="scripts.js" defer></script>
+    
   </body>
 </html>
